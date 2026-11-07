@@ -1,0 +1,98 @@
+[
+  {
+    "id": 1,
+    "username": "admin",
+    "email": "admin@zjmf-demo.local",
+    "name": "系统管理员",
+    "role": "admin",
+    "status": "active",
+    "password_hash": "$2y$10$rzYlLJNY0oy8Tfvf.fSovOL6AikuMPhSHtwU9C4AYG00JWKjcToLi",
+    "phone": "13800000001",
+    "credits": 12800.00,
+    "avatar": "",
+    "createdAt": "2026-01-08 10:20:00",
+    "realname": {
+      "status": "verified",
+      "name": "张管理",
+      "idno": "1101011990****1234",
+      "at": "2026-01-09 09:00:00",
+      "note": "系统初始化认证"
+    },
+    "security": {
+      "twofa": true,
+      "lastPasswordChange": "2026-02-11 12:00:00"
+    }
+  },
+  {
+    "id": 2,
+    "username": "demo",
+    "email": "demo@zjmf-demo.local",
+    "name": "林小舟",
+    "role": "user",
+    "status": "active",
+    "password_hash": "$2y$10$svUWj6r81J.IAXaXugA5PO30Sz0yxzRdcGqa5/PLDF6seUBfAeDwC",
+    "phone": "13800000002",
+    "credits": 4663.00,
+    "avatar": "",
+    "createdAt": "2026-03-02 14:35:00",
+    "realname": {
+      "status": "verified",
+      "name": "林小舟",
+      "idno": "3101041996****2416",
+      "at": "2026-03-04 16:20:00",
+      "note": "人工审核通过"
+    },
+    "security": {
+      "twofa": false,
+      "lastPasswordChange": "2026-03-02 14:35:00"
+    }
+  },
+  {
+    "id": 3,
+    "username": "wangyun",
+    "email": "wangyun@example.com",
+    "name": "王云",
+    "role": "user",
+    "status": "active",
+    "password_hash": "$2y$10$svUWj6r81J.IAXaXugA5PO30Sz0yxzRdcGqa5/PLDF6seUBfAeDwC",
+    "phone": "13800000003",
+    "credits": 820.00,
+    "avatar": "",
+    "createdAt": "2026-05-18 09:12:00",
+    "realname": {
+      "status": "pending",
+      "name": "王云",
+      "idno": "4401061992****3019",
+      "at": "2026-10-27 11:05:00",
+      "note": "待人工审核"
+    },
+    "security": {
+      "twofa": false,
+      "lastPasswordChange": "2026-05-18 09:12:00"
+    }
+  },
+  {
+    "id": 4,
+    "username": "chenmo",
+    "email": "chenmo@example.com",
+    "name": "陈默",
+    "role": "user",
+    "status": "disabled",
+    "password_hash": "$2y$10$svUWj6r81J.IAXaXugA5PO30Sz0yxzRdcGqa5/PLDF6seUBfAeDwC",
+    "phone": "13800000004",
+    "credits": 0.00,
+    "avatar": "",
+    "createdAt": "2026-06-09 18:40:00",
+    "realname": {
+      "status": "unverified",
+      "name": "",
+      "idno": "",
+      "at": "",
+      "note": ""
+    },
+    "security": {
+      "twofa": false,
+      "lastPasswordChange": "2026-06-09 18:40:00"
+    }
+  }
+]

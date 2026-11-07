@@ -1,0 +1,181 @@
+/* ==========================================================================
+   智简魔方 · Glass UI 设计令牌（Design Tokens）
+   所有页面样式只使用本文件与运行时主题变量，禁止散落硬编码颜色。
+   ========================================================================== */
+
+:root {
+  /* 字体 */
+  --font-sans: "Inter", "HarmonyOS Sans SC", "PingFang SC", "Microsoft YaHei", system-ui, -apple-system, "Segoe UI", sans-serif;
+  --font-mono: "JetBrains Mono", "Cascadia Code", "SFMono-Regular", Consolas, "Liberation Mono", monospace;
+
+  /* 字号阶梯 */
+  --fs-2xs: 11px;
+  --fs-xs: 12px;
+  --fs-sm: 13px;
+  --fs-base: 14px;
+  --fs-md: 15px;
+  --fs-lg: 17px;
+  --fs-xl: 20px;
+  --fs-2xl: 26px;
+  --fs-3xl: 34px;
+  --fs-4xl: 44px;
+  --fs-hero: clamp(36px, 4.2vw, 58px);
+  --fs-display: clamp(64px, 10vw, 132px);
+
+  /* 行高 */
+  --lh-tight: 1.2;
+  --lh-snug: 1.45;
+  --lh-normal: 1.68;
+
+  /* 间距阶梯（4 的倍数） */
+  --space-1: 4px;
+  --space-2: 8px;
+  --space-3: 12px;
+  --space-4: 16px;
+  --space-5: 20px;
+  --space-6: 24px;
+  --space-7: 32px;
+  --space-8: 40px;
+  --space-9: 48px;
+  --space-10: 56px;
+  --space-11: 64px;
+  --space-12: 80px;
+  --space-13: 104px;
+
+  /* 圆角 */
+  --radius-xs: 6px;
+  --radius-sm: 10px;
+  --radius-md: 14px;
+  --radius-lg: 20px;
+  --radius-xl: 28px;
+  --radius-pill: 999px;
+
+  /* 容器与结构 */
+  --container: 1240px;
+  --container-narrow: 880px;
+  --header-h: 68px;
+  --sidebar-w: 248px;
+
+  /* 动效 */
+  --ease: cubic-bezier(0.22, 0.61, 0.36, 1);
+  --ease-out: cubic-bezier(0.16, 1, 0.3, 1);
+  --dur-1: 0.14s;
+  --dur-2: 0.26s;
+  --dur-3: 0.48s;
+
+  /* 层级 */
+  --z-bg: -1;
+  --z-base: 0;
+  --z-sticky: 20;
+  --z-header: 100;
+  --z-popover: 300;
+  --z-drawer: 500;
+  --z-modal: 700;
+  --z-toast: 900;
+
+  /* 状态色（两套模式共用，可读性经过对比度检查） */
+  --success: #2fbf91;
+  --success-soft: rgba(47, 191, 145, 0.14);
+  --warning: #e8a33d;
+  --warning-soft: rgba(232, 163, 61, 0.14);
+  --danger: #ef6b6b;
+  --danger-soft: rgba(239, 107, 107, 0.14);
+  --info: #58a6ff;
+  --info-soft: rgba(88, 166, 255, 0.14);
+
+  /* 运行时主题变量默认值（Theme.apply 会覆盖） */
+  --glass-alpha: 0.48;
+  --glass-blur: 20px;
+  --glass-border-alpha: 0.3;
+  --glass-glow: 0.4;
+  --glass-shadow: 0.5;
+  --glass-sat: 1.5;
+  --accent: #3fd0c9;
+  --accent-2: #58a6ff;
+  --accent-soft: rgba(63, 208, 201, 0.14);
+  --accent-glow: rgba(63, 208, 201, 0.35);
+
+  /* 背景层默认值 */
+  --bg-color: #04121d;
+  --bg-from: #04121d;
+  --bg-to: #0b3550;
+  --bg-angle: 140deg;
+  --bg-image: none;
+  --bg-blur: 0px;
+  --bg-veil: 0.2;
+  --bg-veil-color: #03111a;
+  --bg-paint: linear-gradient(140deg, #04121d, #0b3550);
+}
+
+html[data-mode="dark"] {
+  --text-1: #edf3fb;
+  --text-2: #a4b3c9;
+  --text-3: #74849b;
+  --text-inverse: #0a1420;
+  --glass-rgb: 14, 23, 38;
+  --glass-strong-rgb: 10, 17, 30;
+  --glass-border: rgba(255, 255, 255, 0.14);
+  --glass-border-strong: rgba(255, 255, 255, 0.22);
+  --glass-highlight: inset 0 1px 0 rgba(255, 255, 255, 0.16);
+  --line: rgba(255, 255, 255, 0.09);
+  --line-strong: rgba(255, 255, 255, 0.16);
+  --field-bg: rgba(6, 12, 22, 0.46);
+  --field-border: rgba(255, 255, 255, 0.13);
+  --surface-solid: #0c1624;
+  --surface-soft: rgba(255, 255, 255, 0.045);
+  --surface-hover: rgba(255, 255, 255, 0.075);
+  --shadow-color: 0, 0, 0;
+  --shadow-1: 0 4px 18px rgba(0, 0, 0, calc(0.28 * var(--glass-shadow)));
+  --shadow-2: 0 18px 48px rgba(0, 0, 0, calc(0.46 * var(--glass-shadow)));
+  --shadow-3: 0 32px 90px rgba(0, 0, 0, calc(0.55 * var(--glass-shadow)));
+  --chart-grid: rgba(255, 255, 255, 0.08);
+  --code-bg: rgba(3, 8, 16, 0.5);
+  --overlay: rgba(3, 7, 14, 0.62);
+  --orb-opacity: 0.5;
+  --grain-opacity: 0.055;
+  --skeleton: rgba(255, 255, 255, 0.08);
+  --skeleton-shine: rgba(255, 255, 255, 0.16);
+}
+
+html[data-mode="light"] {
+  --text-1: #101828;
+  --text-2: #475467;
+  --text-3: #667085;
+  --text-inverse: #ffffff;
+  --glass-rgb: 255, 255, 255;
+  --glass-strong-rgb: 255, 255, 255;
+  --glass-border: rgba(255, 255, 255, 0.62);
+  --glass-border-strong: rgba(255, 255, 255, 0.82);
+  --glass-highlight: inset 0 1px 0 rgba(255, 255, 255, 0.9);
+  --line: rgba(16, 24, 40, 0.1);
+  --line-strong: rgba(16, 24, 40, 0.18);
+  --field-bg: rgba(255, 255, 255, 0.7);
+  --field-border: rgba(16, 24, 40, 0.14);
+  --surface-solid: #ffffff;
+  --surface-soft: rgba(255, 255, 255, 0.56);
+  --surface-hover: rgba(255, 255, 255, 0.82);
+  --shadow-color: 17, 33, 58;
+  --shadow-1: 0 4px 16px rgba(17, 33, 58, calc(0.1 * var(--glass-shadow)));
+  --shadow-2: 0 18px 44px rgba(17, 33, 58, calc(0.16 * var(--glass-shadow)));
+  --shadow-3: 0 32px 80px rgba(17, 33, 58, calc(0.22 * var(--glass-shadow)));
+  --chart-grid: rgba(16, 24, 40, 0.1);
+  --code-bg: rgba(255, 255, 255, 0.66);
+  --overlay: rgba(244, 247, 255, 0.64);
+  --orb-opacity: 0.42;
+  --grain-opacity: 0.028;
+  --skeleton: rgba(16, 24, 40, 0.07);
+  --skeleton-shine: rgba(255, 255, 255, 0.65);
+}
+
+/* 派生变量：主题引擎与模式组合后自动生效 */
+:root,
+html[data-mode="dark"],
+html[data-mode="light"] {
+  --glass-bg: rgba(var(--glass-rgb), var(--glass-alpha));
+  --glass-bg-strong: rgba(var(--glass-strong-rgb), calc(var(--glass-alpha) + 0.14));
+  --glass-border-color: rgba(var(--glass-border-rgb, 255, 255, 255), var(--glass-border-alpha));
+  --glass-blur-value: blur(var(--glass-blur)) saturate(var(--glass-sat));
+  --radius-card: var(--radius-lg);
+  --accent-contrast: color-mix(in srgb, var(--accent) 18%, transparent);
+  --accent-line: color-mix(in srgb, var(--accent) 45%, transparent);
+}

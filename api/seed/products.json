@@ -1,0 +1,478 @@
+[
+  {
+    "id": 1,
+    "slug": "cloud-ecs",
+    "name": "智简云 ECS",
+    "category": "cloud",
+    "categoryName": "云服务器",
+    "tagline": "弹性可扩展的企业级云计算实例",
+    "description": "基于全闪存分布式存储与自研调度系统构建的云服务器。支持分钟级交付、在线升降配、快照回滚与多可用区容灾，适合网站、API 服务、数据库与容器集群等通用业务场景。",
+    "features": [
+      "全闪存 NVMe 存储，随机 IOPS 提升 3 倍",
+      "分钟级开通，支持在线升降配",
+      "免费每日自动快照与一键回滚",
+      "多可用区容灾，SLA 99.95%",
+      "内网互通，支持私有网络编排"
+    ],
+    "recommended": true,
+    "badge": "热销",
+    "regions": ["华东-上海", "华北-北京", "华南-广州", "香港-荃湾"],
+    "os": ["Ubuntu 22.04 LTS", "Debian 12", "CentOS 7.9", "Rocky Linux 9", "Windows Server 2022"],
+    "plans": [
+      {
+        "id": "ecs-lite",
+        "name": "轻量型",
+        "desc": "个人站点与轻量 API",
+        "specs": [
+          {"label": "CPU", "value": "2 核"},
+          {"label": "内存", "value": "4 GB"},
+          {"label": "系统盘", "value": "60 GB NVMe"},
+          {"label": "带宽", "value": "5 Mbps"},
+          {"label": "月流量", "value": "不限"}
+        ],
+        "price": 49,
+        "unit": "月",
+        "stock": 120
+      },
+      {
+        "id": "ecs-std",
+        "name": "标准型",
+        "desc": "中小型业务系统",
+        "specs": [
+          {"label": "CPU", "value": "4 核"},
+          {"label": "内存", "value": "8 GB"},
+          {"label": "系统盘", "value": "120 GB NVMe"},
+          {"label": "带宽", "value": "10 Mbps"},
+          {"label": "月流量", "value": "不限"}
+        ],
+        "price": 99,
+        "unit": "月",
+        "stock": 86,
+        "recommended": true
+      },
+      {
+        "id": "ecs-pro",
+        "name": "性能型",
+        "desc": "高并发与中型数据库",
+        "specs": [
+          {"label": "CPU", "value": "8 核"},
+          {"label": "内存", "value": "16 GB"},
+          {"label": "系统盘", "value": "240 GB NVMe"},
+          {"label": "带宽", "value": "20 Mbps"},
+          {"label": "月流量", "value": "不限"}
+        ],
+        "price": 199,
+        "unit": "月",
+        "stock": 54
+      },
+      {
+        "id": "ecs-max",
+        "name": "旗舰型",
+        "desc": "大型应用与容器集群",
+        "specs": [
+          {"label": "CPU", "value": "16 核"},
+          {"label": "内存", "value": "32 GB"},
+          {"label": "系统盘", "value": "480 GB NVMe"},
+          {"label": "带宽", "value": "50 Mbps"},
+          {"label": "月流量", "value": "不限"}
+        ],
+        "price": 399,
+        "unit": "月",
+        "stock": 28
+      }
+    ]
+  },
+  {
+    "id": 2,
+    "slug": "gpu-cloud",
+    "name": "GPU 云主机",
+    "category": "gpu",
+    "categoryName": "GPU 计算",
+    "tagline": "面向推理与训练的弹性 GPU 算力",
+    "description": "搭载数据中心级 GPU 的云主机，预装 CUDA 与主流推理框架镜像。适用于大模型推理、图像生成、视频转码与科学计算，支持按需扩展 GPU 数量。",
+    "features": [
+      "预装 CUDA 12 与 PyTorch 运行环境",
+      "支持 GPU 直通与 vGPU 切分",
+      "高速 RDMA 内网互联",
+      "镜像市场一键部署",
+      "按小时计费的弹性模式"
+    ],
+    "recommended": true,
+    "badge": "算力",
+    "regions": ["华北-北京", "华东-上海"],
+    "os": ["Ubuntu 22.04 + CUDA 12", "PyTorch 2.4 镜像", "TensorFlow 2.16 镜像"],
+    "plans": [
+      {
+        "id": "gpu-a10",
+        "name": "A10 推理型",
+        "desc": "单卡推理与轻量训练",
+        "specs": [
+          {"label": "GPU", "value": "NVIDIA A10 24G x1"},
+          {"label": "CPU", "value": "8 核"},
+          {"label": "内存", "value": "32 GB"},
+          {"label": "系统盘", "value": "200 GB NVMe"},
+          {"label": "带宽", "value": "50 Mbps"}
+        ],
+        "price": 899,
+        "unit": "月",
+        "stock": 18,
+        "recommended": true
+      },
+      {
+        "id": "gpu-a100",
+        "name": "A100 训练型",
+        "desc": "大模型微调与训练",
+        "specs": [
+          {"label": "GPU", "value": "NVIDIA A100 80G x1"},
+          {"label": "CPU", "value": "16 核"},
+          {"label": "内存", "value": "128 GB"},
+          {"label": "系统盘", "value": "500 GB NVMe"},
+          {"label": "带宽", "value": "100 Mbps"}
+        ],
+        "price": 1899,
+        "unit": "月",
+        "stock": 6
+      }
+    ]
+  },
+  {
+    "id": 3,
+    "slug": "hk-dedicated",
+    "name": "香港独立服务器",
+    "category": "dedicated",
+    "categoryName": "独立服务器",
+    "tagline": "独享硬件资源，CN2 GIA 三网直连",
+    "description": "香港荃湾与将军澳机房独立服务器，独享整机硬件与带宽，接入 CN2 GIA 三网优化线路。适合跨境电商、游戏加速与需要独立资源的高负载业务。",
+    "features": [
+      "整机独享，无虚拟化性能损耗",
+      "CN2 GIA 三网优化直连",
+      "IPMI 远程管理，支持自定义 RAID",
+      "免费 5 个 IPv4 地址",
+      "硬件故障 4 小时响应"
+    ],
+    "recommended": false,
+    "badge": "独享",
+    "regions": ["香港-荃湾", "香港-将军澳"],
+    "os": ["CentOS 7.9", "Ubuntu 22.04 LTS", "Windows Server 2022", "VMware ESXi 8"],
+    "plans": [
+      {
+        "id": "hk-e3",
+        "name": "E3 入门",
+        "desc": "轻量独享业务",
+        "specs": [
+          {"label": "CPU", "value": "Xeon E3-1230 v6"},
+          {"label": "内存", "value": "32 GB DDR4"},
+          {"label": "硬盘", "value": "2 x 480 GB SSD"},
+          {"label": "带宽", "value": "10 Mbps CN2"},
+          {"label": "IP", "value": "5 个 IPv4"}
+        ],
+        "price": 699,
+        "unit": "月",
+        "stock": 12
+      },
+      {
+        "id": "hk-e5",
+        "name": "E5 标准",
+        "desc": "中型独享业务",
+        "specs": [
+          {"label": "CPU", "value": "2 x Xeon E5-2680 v4"},
+          {"label": "内存", "value": "128 GB DDR4"},
+          {"label": "硬盘", "value": "4 x 960 GB SSD"},
+          {"label": "带宽", "value": "20 Mbps CN2"},
+          {"label": "IP", "value": "5 个 IPv4"}
+        ],
+        "price": 1299,
+        "unit": "月",
+        "stock": 8,
+        "recommended": true
+      },
+      {
+        "id": "hk-gold",
+        "name": "Gold 高配",
+        "desc": "高负载独享业务",
+        "specs": [
+          {"label": "CPU", "value": "2 x Xeon Gold 6148"},
+          {"label": "内存", "value": "256 GB DDR4"},
+          {"label": "硬盘", "value": "8 x 1.92 TB NVMe"},
+          {"label": "带宽", "value": "50 Mbps CN2"},
+          {"label": "IP", "value": "13 个 IPv4"}
+        ],
+        "price": 2399,
+        "unit": "月",
+        "stock": 3
+      }
+    ]
+  },
+  {
+    "id": 4,
+    "slug": "hk-vps",
+    "name": "CN2 GIA 香港 VPS",
+    "category": "vps",
+    "categoryName": "VPS 主机",
+    "tagline": "低延迟跨境访问，入门首选",
+    "description": "KVM 全虚拟化香港 VPS，CN2 GIA 三网回程，支持自定义内核与完整 root 权限。适合个人建站、开发测试与轻量跨境业务。",
+    "features": [
+      "KVM 全虚拟化，完整 root 权限",
+      "CN2 GIA 三网回程优化",
+      "免费每日备份",
+      "支持一键重装与快照",
+      "可升级至独立服务器"
+    ],
+    "recommended": true,
+    "badge": "性价比",
+    "regions": ["香港-荃湾", "香港-新界"],
+    "os": ["Ubuntu 22.04 LTS", "Debian 12", "AlmaLinux 9", "Windows Server 2019"],
+    "plans": [
+      {
+        "id": "vps-basic",
+        "name": "入门版",
+        "desc": "个人站点与测试",
+        "specs": [
+          {"label": "CPU", "value": "1 核"},
+          {"label": "内存", "value": "1 GB"},
+          {"label": "硬盘", "value": "20 GB SSD"},
+          {"label": "带宽", "value": "3 Mbps"},
+          {"label": "月流量", "value": "500 GB"}
+        ],
+        "price": 39,
+        "unit": "月",
+        "stock": 210
+      },
+      {
+        "id": "vps-plus",
+        "name": "进阶版",
+        "desc": "中小型网站",
+        "specs": [
+          {"label": "CPU", "value": "2 核"},
+          {"label": "内存", "value": "2 GB"},
+          {"label": "硬盘", "value": "40 GB SSD"},
+          {"label": "带宽", "value": "5 Mbps"},
+          {"label": "月流量", "value": "1000 GB"}
+        ],
+        "price": 79,
+        "unit": "月",
+        "stock": 132,
+        "recommended": true
+      },
+      {
+        "id": "vps-pro",
+        "name": "专业版",
+        "desc": "多站点与中型应用",
+        "specs": [
+          {"label": "CPU", "value": "4 核"},
+          {"label": "内存", "value": "8 GB"},
+          {"label": "硬盘", "value": "80 GB SSD"},
+          {"label": "带宽", "value": "10 Mbps"},
+          {"label": "月流量", "value": "2000 GB"}
+        ],
+        "price": 159,
+        "unit": "月",
+        "stock": 64
+      }
+    ]
+  },
+  {
+    "id": 5,
+    "slug": "anti-ddos-cdn",
+    "name": "高防 CDN 加速",
+    "category": "cdn",
+    "categoryName": "CDN 与安全",
+    "tagline": "边缘加速与 T 级 DDoS 清洗",
+    "description": "覆盖全球 280+ 边缘节点的加速与防护一体化服务。支持静态资源缓存、动态加速、Web 应用防火墙与 T 级 DDoS 清洗，保障业务连续性与访问体验。",
+    "features": [
+      "全球 280+ 边缘节点，智能调度",
+      "T 级 DDoS 清洗与 CC 防护",
+      "免费 SSL 证书与 HTTP/3",
+      "缓存规则与回源策略可视化配置",
+      "实时流量与攻击报表"
+    ],
+    "recommended": true,
+    "badge": "安全",
+    "regions": ["全球加速", "中国大陆", "亚太优化"],
+    "os": ["无需选择操作系统"],
+    "plans": [
+      {
+        "id": "cdn-starter",
+        "name": "基础防护",
+        "desc": "个人站点与小型业务",
+        "specs": [
+          {"label": "防护峰值", "value": "50 Gbps"},
+          {"label": "月流量", "value": "500 GB"},
+          {"label": "加速节点", "value": "全球 120+"},
+          {"label": "WAF", "value": "基础规则"},
+          {"label": "SSL", "value": "免费证书"}
+        ],
+        "price": 99,
+        "unit": "月",
+        "stock": 300
+      },
+      {
+        "id": "cdn-business",
+        "name": "商业防护",
+        "desc": "电商与中型业务",
+        "specs": [
+          {"label": "防护峰值", "value": "300 Gbps"},
+          {"label": "月流量", "value": "3 TB"},
+          {"label": "加速节点", "value": "全球 200+"},
+          {"label": "WAF", "value": "自定义规则"},
+          {"label": "SSL", "value": "泛域名证书"}
+        ],
+        "price": 299,
+        "unit": "月",
+        "stock": 180,
+        "recommended": true
+      },
+      {
+        "id": "cdn-enterprise",
+        "name": "企业防护",
+        "desc": "大型平台与关键业务",
+        "specs": [
+          {"label": "防护峰值", "value": "1 Tbps"},
+          {"label": "月流量", "value": "不限"},
+          {"label": "加速节点", "value": "全球 280+"},
+          {"label": "WAF", "value": "专家托管"},
+          {"label": "SSL", "value": "多域名证书"}
+        ],
+        "price": 899,
+        "unit": "月",
+        "stock": 42
+      }
+    ]
+  },
+  {
+    "id": 6,
+    "slug": "object-storage",
+    "name": "智简对象存储 OSS",
+    "category": "storage",
+    "categoryName": "对象存储",
+    "tagline": "兼容 S3 的海量非结构化存储",
+    "description": "兼容 S3 协议的对象存储服务，提供多副本冗余、跨区域同步与生命周期管理。适合图片、视频、备份归档与静态资源托管。",
+    "features": [
+      "兼容 S3 API，迁移成本低",
+      "三副本冗余与跨区同步",
+      "图片处理与视频转码",
+      "生命周期与版本管理",
+      "按量计费，弹性扩容"
+    ],
+    "recommended": false,
+    "badge": "存储",
+    "regions": ["华东-上海", "华北-北京", "华南-广州"],
+    "os": ["S3 兼容接口"],
+    "plans": [
+      {
+        "id": "oss-100",
+        "name": "100 GB 套餐",
+        "desc": "个人与小型项目",
+        "specs": [
+          {"label": "存储空间", "value": "100 GB"},
+          {"label": "月流量", "value": "200 GB"},
+          {"label": "请求次数", "value": "不限"},
+          {"label": "副本", "value": "三副本"},
+          {"label": "CDN", "value": "可选"}
+        ],
+        "price": 19,
+        "unit": "月",
+        "stock": 999
+      },
+      {
+        "id": "oss-500",
+        "name": "500 GB 套餐",
+        "desc": "中型应用资源库",
+        "specs": [
+          {"label": "存储空间", "value": "500 GB"},
+          {"label": "月流量", "value": "1 TB"},
+          {"label": "请求次数", "value": "不限"},
+          {"label": "副本", "value": "三副本"},
+          {"label": "CDN", "value": "赠送 100 GB"}
+        ],
+        "price": 69,
+        "unit": "月",
+        "stock": 520,
+        "recommended": true
+      },
+      {
+        "id": "oss-2000",
+        "name": "2 TB 套餐",
+        "desc": "企业备份与归档",
+        "specs": [
+          {"label": "存储空间", "value": "2 TB"},
+          {"label": "月流量", "value": "5 TB"},
+          {"label": "请求次数", "value": "不限"},
+          {"label": "副本", "value": "三副本 + 跨区"},
+          {"label": "CDN", "value": "赠送 1 TB"}
+        ],
+        "price": 199,
+        "unit": "月",
+        "stock": 160
+      }
+    ]
+  },
+  {
+    "id": 7,
+    "slug": "shared-hosting",
+    "name": "企业虚拟主机",
+    "category": "hosting",
+    "categoryName": "虚拟主机",
+    "tagline": "开箱即用的建站空间",
+    "description": "预装建站环境与一键安装应用的虚拟主机，含独立控制面板、免费 SSL 与每日备份。适合企业官网、博客与轻量电商。",
+    "features": [
+      "cPanel 中文控制面板",
+      "一键安装 WordPress 等应用",
+      "免费 SSL 与每日备份",
+      "支持 PHP 7.4 / 8.2 多版本",
+      "邮箱与域名绑定"
+    ],
+    "recommended": false,
+    "badge": "建站",
+    "regions": ["华东-上海", "香港-荃湾"],
+    "os": ["Linux + cPanel", "Windows + Plesk"],
+    "plans": [
+      {
+        "id": "host-basic",
+        "name": "基础型",
+        "desc": "个人博客与展示站",
+        "specs": [
+          {"label": "空间", "value": "10 GB"},
+          {"label": "站点数", "value": "1 个"},
+          {"label": "数据库", "value": "1 个 MySQL"},
+          {"label": "月流量", "value": "50 GB"},
+          {"label": "SSL", "value": "免费"}
+        ],
+        "price": 19,
+        "unit": "月",
+        "stock": 400
+      },
+      {
+        "id": "host-business",
+        "name": "企业型",
+        "desc": "企业官网与小型电商",
+        "specs": [
+          {"label": "空间", "value": "50 GB"},
+          {"label": "站点数", "value": "5 个"},
+          {"label": "数据库", "value": "5 个 MySQL"},
+          {"label": "月流量", "value": "300 GB"},
+          {"label": "SSL", "value": "泛域名"}
+        ],
+        "price": 49,
+        "unit": "月",
+        "stock": 260,
+        "recommended": true
+      },
+      {
+        "id": "host-pro",
+        "name": "旗舰型",
+        "desc": "多站点运营与分销",
+        "specs": [
+          {"label": "空间", "value": "200 GB"},
+          {"label": "站点数", "value": "不限"},
+          {"label": "数据库", "value": "20 个 MySQL"},
+          {"label": "月流量", "value": "不限"},
+          {"label": "SSL", "value": "泛域名 + 独立 IP"}
+        ],
+        "price": 99,
+        "unit": "月",
+        "stock": 120
+      }
+    ]
+  }
+]

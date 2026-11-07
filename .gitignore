@@ -1,0 +1,13 @@
+# 运行时数据（首次访问时由 api/seed 自动生成）
+/data/*.json
+/data/*.lock
+
+# 上传文件
+/uploads/*
+!/uploads/.gitkeep
+
+# 杂项
+*.log
+Thumbs.db
+.DS_Store
+node_modules/

@@ -1,0 +1,86 @@
+[
+  {
+    "id": 1,
+    "userId": 2,
+    "type": "recharge",
+    "amount": 5000.00,
+    "balanceAfter": 5000.00,
+    "method": "alipay",
+    "status": "completed",
+    "note": "账户充值 · 财务审核通过",
+    "orderNo": "RC202609010001",
+    "at": "2026-09-01 09:30:00"
+  },
+  {
+    "id": 2,
+    "userId": 2,
+    "type": "consume",
+    "amount": -199.00,
+    "balanceAfter": 4801.00,
+    "method": "balance",
+    "status": "completed",
+    "note": "订单 ZJ202609150003 · 智简云 ECS 性能型",
+    "orderNo": "ZJ202609150003",
+    "at": "2026-09-15 13:25:10"
+  },
+  {
+    "id": 3,
+    "userId": 2,
+    "type": "consume",
+    "amount": -899.00,
+    "balanceAfter": 3902.00,
+    "method": "balance",
+    "status": "completed",
+    "note": "订单 ZJ202610120007 · GPU 云主机 A10 推理型",
+    "orderNo": "ZJ202610120007",
+    "at": "2026-10-12 10:03:05"
+  },
+  {
+    "id": 4,
+    "userId": 2,
+    "type": "consume",
+    "amount": -138.00,
+    "balanceAfter": 3764.00,
+    "method": "balance",
+    "status": "completed",
+    "note": "订单 ZJ202610290001 · ECS + 香港 VPS",
+    "orderNo": "ZJ202610290001",
+    "at": "2026-10-29 09:12:40"
+  },
+  {
+    "id": 5,
+    "userId": 1,
+    "type": "recharge",
+    "amount": 12800.00,
+    "balanceAfter": 12800.00,
+    "method": "wechat",
+    "status": "completed",
+    "note": "账户充值 · 系统初始化",
+    "orderNo": "RC202601080001",
+    "at": "2026-01-08 10:30:00"
+  },
+  {
+    "id": 6,
+    "userId": 3,
+    "type": "recharge",
+    "amount": 820.00,
+    "balanceAfter": 820.00,
+    "method": "alipay",
+    "status": "completed",
+    "note": "账户充值 · 财务审核通过",
+    "orderNo": "RC202610250002",
+    "at": "2026-10-25 15:00:00"
+  },
+  {
+    "id": 7,
+    "userId": 3,
+    "type": "consume",
+    "amount": -99.00,
+    "balanceAfter": 721.00,
+    "method": "balance",
+    "status": "completed",
+    "note": "订单 ZJ202610250005 · 高防 CDN 基础防护",
+    "orderNo": "ZJ202610250005",
+    "at": "2026-10-25 16:41:22"
+  }
+]

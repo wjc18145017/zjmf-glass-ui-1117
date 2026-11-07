@@ -1,0 +1,72 @@
+[
+  {
+    "id": 1,
+    "userId": 2,
+    "type": "ticket",
+    "title": "工单有新回复",
+    "content": "工单「香港 VPS 无法通过 SSH 连接」收到技术支持 周工 的回复。",
+    "read": false,
+    "at": "2026-11-05 10:03:00",
+    "link": "#/user/tickets/1"
+  },
+  {
+    "id": 2,
+    "userId": 2,
+    "type": "billing",
+    "title": "充值申请已提交",
+    "content": "您的 1200 元充值申请已提交，财务将在 1 个工作日内审核。",
+    "read": false,
+    "at": "2026-11-05 21:18:00",
+    "link": "#/user/billing"
+  },
+  {
+    "id": 3,
+    "userId": 2,
+    "type": "system",
+    "title": "实例即将到期",
+    "content": "实例 hk-edge-01 将于 2026-11-20 到期，请及时续费以免服务中断。",
+    "read": false,
+    "at": "2026-11-06 08:00:00",
+    "link": "#/user/servers/2"
+  },
+  {
+    "id": 4,
+    "userId": 2,
+    "type": "system",
+    "title": "双十一活动开启",
+    "content": "新购云服务器首月 5 折，续费同享 8 折，活动截止 11 月 15 日。",
+    "read": true,
+    "at": "2026-11-01 09:00:00",
+    "link": "#/news/3"
+  },
+  {
+    "id": 5,
+    "userId": 2,
+    "type": "security",
+    "title": "新设备登录提醒",
+    "content": "您的账户于 2026-11-07 08:12 在新设备（Windows / Chrome）登录，如非本人操作请及时修改密码。",
+    "read": true,
+    "at": "2026-11-07 08:12:00",
+    "link": "#/user/security"
+  },
+  {
+    "id": 6,
+    "userId": 1,
+    "type": "system",
+    "title": "有新的充值待审核",
+    "content": "用户 林小舟 提交了 1200 元充值申请，请前往财务审核。",
+    "read": false,
+    "at": "2026-11-05 21:18:00",
+    "link": "#/admin/finance"
+  },
+  {
+    "id": 7,
+    "userId": 3,
+    "type": "ticket",
+    "title": "实名认证待审核",
+    "content": "您提交的实名认证资料已进入人工审核队列，预计 1 个工作日内完成。",
+    "read": true,
+    "at": "2026-10-27 11:05:00",
+    "link": "#/user/realname"
+  }
+]

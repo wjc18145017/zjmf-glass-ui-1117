@@ -1,0 +1,204 @@
+[
+  {
+    "id": 1,
+    "no": "ZJ202610290001",
+    "userId": 2,
+    "status": "paid",
+    "amount": 138.00,
+    "payMethod": "balance",
+    "createdAt": "2026-10-29 09:12:00",
+    "paidAt": "2026-10-29 09:12:40",
+    "provisioned": true,
+    "remark": "",
+    "items": [
+      {
+        "productId": 1,
+        "slug": "cloud-ecs",
+        "productName": "智简云 ECS",
+        "planId": "ecs-std",
+        "planName": "标准型",
+        "region": "华东-上海",
+        "os": "Ubuntu 22.04 LTS",
+        "months": 1,
+        "qty": 1,
+        "unitPrice": 99,
+        "amount": 99
+      },
+      {
+        "productId": 4,
+        "slug": "hk-vps",
+        "productName": "CN2 GIA 香港 VPS",
+        "planId": "vps-basic",
+        "planName": "入门版",
+        "region": "香港-荃湾",
+        "os": "Debian 12",
+        "months": 1,
+        "qty": 1,
+        "unitPrice": 39,
+        "amount": 39
+      }
+    ]
+  },
+  {
+    "id": 2,
+    "no": "ZJ202611010002",
+    "userId": 2,
+    "status": "pending",
+    "amount": 99.00,
+    "payMethod": "",
+    "createdAt": "2026-11-01 20:05:00",
+    "paidAt": "",
+    "provisioned": false,
+    "remark": "",
+    "items": [
+      {
+        "productId": 1,
+        "slug": "cloud-ecs",
+        "productName": "智简云 ECS",
+        "planId": "ecs-std",
+        "planName": "标准型",
+        "region": "华北-北京",
+        "os": "Debian 12",
+        "months": 1,
+        "qty": 1,
+        "unitPrice": 99,
+        "amount": 99
+      }
+    ]
+  },
+  {
+    "id": 3,
+    "no": "ZJ202609150003",
+    "userId": 2,
+    "status": "paid",
+    "amount": 199.00,
+    "payMethod": "balance",
+    "createdAt": "2026-09-15 13:24:00",
+    "paidAt": "2026-09-15 13:25:10",
+    "provisioned": true,
+    "remark": "",
+    "items": [
+      {
+        "productId": 1,
+        "slug": "cloud-ecs",
+        "productName": "智简云 ECS",
+        "planId": "ecs-pro",
+        "planName": "性能型",
+        "region": "华东-上海",
+        "os": "Rocky Linux 9",
+        "months": 1,
+        "qty": 1,
+        "unitPrice": 199,
+        "amount": 199
+      }
+    ]
+  },
+  {
+    "id": 4,
+    "no": "ZJ202608100004",
+    "userId": 2,
+    "status": "cancelled",
+    "amount": 39.00,
+    "payMethod": "",
+    "createdAt": "2026-08-10 11:08:00",
+    "paidAt": "",
+    "provisioned": false,
+    "remark": "用户主动取消",
+    "items": [
+      {
+        "productId": 4,
+        "slug": "hk-vps",
+        "productName": "CN2 GIA 香港 VPS",
+        "planId": "vps-basic",
+        "planName": "入门版",
+        "region": "香港-新界",
+        "os": "Ubuntu 22.04 LTS",
+        "months": 1,
+        "qty": 1,
+        "unitPrice": 39,
+        "amount": 39
+      }
+    ]
+  },
+  {
+    "id": 5,
+    "no": "ZJ202610250005",
+    "userId": 3,
+    "status": "paid",
+    "amount": 99.00,
+    "payMethod": "alipay",
+    "createdAt": "2026-10-25 16:40:00",
+    "paidAt": "2026-10-25 16:41:22",
+    "provisioned": true,
+    "remark": "",
+    "items": [
+      {
+        "productId": 5,
+        "slug": "anti-ddos-cdn",
+        "productName": "高防 CDN 加速",
+        "planId": "cdn-starter",
+        "planName": "基础防护",
+        "region": "全球加速",
+        "os": "无需选择操作系统",
+        "months": 1,
+        "qty": 1,
+        "unitPrice": 99,
+        "amount": 99
+      }
+    ]
+  },
+  {
+    "id": 6,
+    "no": "ZJ202610120007",
+    "userId": 2,
+    "status": "paid",
+    "amount": 899.00,
+    "payMethod": "balance",
+    "createdAt": "2026-10-12 10:02:00",
+    "paidAt": "2026-10-12 10:03:05",
+    "provisioned": true,
+    "remark": "",
+    "items": [
+      {
+        "productId": 2,
+        "slug": "gpu-cloud",
+        "productName": "GPU 云主机",
+        "planId": "gpu-a10",
+        "planName": "A10 推理型",
+        "region": "华北-北京",
+        "os": "Ubuntu 22.04 + CUDA 12",
+        "months": 1,
+        "qty": 1,
+        "unitPrice": 899,
+        "amount": 899
+      }
+    ]
+  },
+  {
+    "id": 7,
+    "no": "ZJ202611030008",
+    "userId": 1,
+    "status": "paid",
+    "amount": 399.00,
+    "payMethod": "alipay",
+    "createdAt": "2026-11-03 08:45:00",
+    "paidAt": "2026-11-03 08:46:12",
+    "provisioned": true,
+    "remark": "",
+    "items": [
+      {
+        "productId": 1,
+        "slug": "cloud-ecs",
+        "productName": "智简云 ECS",
+        "planId": "ecs-max",
+        "planName": "旗舰型",
+        "region": "华南-广州",
+        "os": "Windows Server 2022",
+        "months": 1,
+        "qty": 1,
+        "unitPrice": 399,
+        "amount": 399
+      }
+    ]
+  }
+]

@@ -1,0 +1,103 @@
+[
+  {
+    "id": 1,
+    "userId": 2,
+    "userName": "林小舟",
+    "title": "香港 VPS 无法通过 SSH 连接",
+    "category": "网络故障",
+    "priority": "high",
+    "status": "answered",
+    "createdAt": "2026-11-05 09:24:00",
+    "updatedAt": "2026-11-06 10:12:00",
+    "messages": [
+      {
+        "id": 1,
+        "from": "user",
+        "author": "林小舟",
+        "content": "今天早上开始 hk-edge-01（203.0.113.24）无法 SSH 连接，控制台显示实例已关机。尝试在控制台开机后仍然连不上，麻烦帮忙看一下。",
+        "at": "2026-11-05 09:24:00"
+      },
+      {
+        "id": 2,
+        "from": "staff",
+        "author": "技术支持 周工",
+        "content": "您好，已定位到该实例因欠费进入保留状态，系统策略自动关机。实例将于 11 月 20 日到期，建议先充值余额并完成续费。续费后我们可协助您恢复实例。",
+        "at": "2026-11-05 10:03:00"
+      },
+      {
+        "id": 3,
+        "from": "user",
+        "author": "林小舟",
+        "content": "了解，我已经提交了 1200 元充值申请，审核通过后我会立即续费。续费后还需要额外操作吗？",
+        "at": "2026-11-06 10:12:00"
+      }
+    ]
+  },
+  {
+    "id": 2,
+    "userId": 2,
+    "userName": "林小舟",
+    "title": "ECS 带宽升级到 20 Mbps 如何计费",
+    "category": "售前咨询",
+    "priority": "normal",
+    "status": "open",
+    "createdAt": "2026-11-06 15:40:00",
+    "updatedAt": "2026-11-06 15:40:00",
+    "messages": [
+      {
+        "id": 4,
+        "from": "user",
+        "author": "林小舟",
+        "content": "web-prod-01 目前是 10 Mbps 带宽，想升级到 20 Mbps。请问是否可以按月补差价？升级过程中需要重启吗？",
+        "at": "2026-11-06 15:40:00"
+      }
+    ]
+  },
+  {
+    "id": 3,
+    "userId": 3,
+    "userName": "王云",
+    "title": "实名认证审核需要多久",
+    "category": "账户问题",
+    "priority": "normal",
+    "status": "open",
+    "createdAt": "2026-10-27 11:10:00",
+    "updatedAt": "2026-10-27 11:10:00",
+    "messages": [
+      {
+        "id": 5,
+        "from": "user",
+        "author": "王云",
+        "content": "昨天提交了个人实名认证，目前仍是待审核状态，请问一般需要多久？",
+        "at": "2026-10-27 11:10:00"
+      }
+    ]
+  },
+  {
+    "id": 4,
+    "userId": 2,
+    "userName": "林小舟",
+    "title": "申请开具 9 月消费发票",
+    "category": "财务发票",
+    "priority": "low",
+    "status": "closed",
+    "createdAt": "2026-10-08 14:02:00",
+    "updatedAt": "2026-10-10 16:30:00",
+    "messages": [
+      {
+        "id": 6,
+        "from": "user",
+        "author": "林小舟",
+        "content": "需要为 9 月订单 ZJ202609150003 开具电子普票，抬头为「上海小舟网络科技有限公司」，税号 91310115MA1K4X8Q2W。",
+        "at": "2026-10-08 14:02:00"
+      },
+      {
+        "id": 7,
+        "from": "staff",
+        "author": "财务 李会计",
+        "content": "已收到开票申请，电子发票已发送至账户邮箱 demo@zjmf-demo.local，请注意查收。",
+        "at": "2026-10-10 16:30:00"
+      }
+    ]
+  }
+]

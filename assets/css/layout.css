@@ -1,0 +1,720 @@
+/* ==========================================================================
+   布局层：站点头部、页脚、用户中心与后台框架
+   ========================================================================== */
+
+.site-header {
+  position: sticky;
+  top: 0;
+  z-index: var(--z-header);
+  height: var(--header-h);
+  border-bottom: 1px solid var(--glass-border-color);
+  background: color-mix(in srgb, var(--glass-bg) 82%, transparent);
+  -webkit-backdrop-filter: var(--glass-blur-value);
+  backdrop-filter: var(--glass-blur-value);
+  transition: box-shadow var(--dur-2) var(--ease), background var(--dur-2) var(--ease);
+}
+
+.site-header.is-scrolled {
+  box-shadow: var(--shadow-2);
+  background: var(--glass-bg-strong);
+}
+
+.site-header__inner {
+  display: flex;
+  align-items: center;
+  gap: var(--space-6);
+  height: 100%;
+  max-width: var(--container);
+  margin: 0 auto;
+  padding: 0 var(--space-6);
+}
+
+.brand {
+  display: flex;
+  align-items: center;
+  gap: 11px;
+  flex: none;
+}
+
+.brand__mark {
+  width: 36px;
+  height: 36px;
+  border-radius: 11px;
+  display: grid;
+  place-items: center;
+  background: linear-gradient(135deg, color-mix(in srgb, var(--accent) 22%, transparent), color-mix(in srgb, var(--accent-2) 18%, transparent));
+  border: 1px solid color-mix(in srgb, var(--accent) 30%, transparent);
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.2), 0 6px 18px -10px var(--accent-glow);
+  color: var(--accent);
+  flex: none;
+}
+
+.brand__mark svg {
+  width: 20px;
+  height: 20px;
+}
+
+.brand__text {
+  display: flex;
+  flex-direction: column;
+  line-height: 1.15;
+}
+
+.brand__name {
+  font-size: var(--fs-base);
+  font-weight: 700;
+  letter-spacing: 0.02em;
+  color: var(--text-1);
+}
+
+.brand__sub {
+  font-size: 9px;
+  letter-spacing: 0.24em;
+  color: var(--text-3);
+  text-transform: uppercase;
+  margin-top: 2px;
+}
+
+.main-nav {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  margin-left: var(--space-4);
+}
+
+.main-nav__link {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  height: 34px;
+  padding: 0 13px;
+  border-radius: var(--radius-pill);
+  font-size: var(--fs-sm);
+  font-weight: 500;
+  color: var(--text-2);
+  transition: all var(--dur-2) var(--ease);
+  white-space: nowrap;
+}
+
+.main-nav__link:hover {
+  color: var(--text-1);
+  background: var(--surface-soft);
+}
+
+.main-nav__link.is-active {
+  color: var(--accent);
+  background: var(--accent-soft);
+}
+
+.header-actions {
+  display: flex;
+  align-items: center;
+  gap: var(--space-2);
+  margin-left: auto;
+  flex: none;
+}
+
+.header-divider {
+  width: 1px;
+  height: 22px;
+  background: var(--line);
+  margin: 0 4px;
+}
+
+.icon-btn {
+  position: relative;
+  width: 38px;
+  height: 38px;
+  border-radius: 12px;
+  display: grid;
+  place-items: center;
+  color: var(--text-2);
+  border: 1px solid transparent;
+  transition: all var(--dur-2) var(--ease);
+}
+
+.icon-btn:hover {
+  color: var(--text-1);
+  background: var(--surface-soft);
+  border-color: var(--glass-border-color);
+}
+
+.icon-btn svg {
+  width: 19px;
+  height: 19px;
+}
+
+.icon-btn__badge {
+  position: absolute;
+  top: 2px;
+  right: 1px;
+  min-width: 17px;
+  height: 17px;
+  padding: 0 5px;
+  border-radius: 9px;
+  background: linear-gradient(120deg, var(--accent), var(--accent-2));
+  color: var(--accent-ink, #071018);
+  font-size: 10px;
+  font-weight: 700;
+  display: grid;
+  place-items: center;
+  line-height: 1;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.25);
+}
+
+.header-user {
+  display: flex;
+  align-items: center;
+  gap: 9px;
+  height: 40px;
+  padding: 0 12px 0 6px;
+  border-radius: var(--radius-pill);
+  border: 1px solid var(--line);
+  background: var(--surface-soft);
+  transition: all var(--dur-2) var(--ease);
+  font-size: var(--fs-xs);
+  font-weight: 600;
+  color: var(--text-1);
+}
+
+.header-user:hover {
+  border-color: color-mix(in srgb, var(--accent) 30%, transparent);
+  background: var(--surface-hover);
+}
+
+.header-user svg:last-child {
+  width: 13px;
+  height: 13px;
+  opacity: 0.6;
+}
+
+.nav-toggle {
+  display: none;
+}
+
+/* 移动端抽屉导航 */
+
+.mobile-nav {
+  display: none;
+}
+
+@media (max-width: 1080px) {
+  .main-nav {
+    display: none;
+  }
+  .nav-toggle {
+    display: grid;
+  }
+  .mobile-nav {
+    display: block;
+    position: fixed;
+    top: var(--header-h);
+    left: 0;
+    right: 0;
+    z-index: var(--z-drawer);
+    padding: var(--space-4) var(--space-4) var(--space-6);
+    background: var(--glass-bg-strong);
+    -webkit-backdrop-filter: var(--glass-blur-value);
+    backdrop-filter: var(--glass-blur-value);
+    border-bottom: 1px solid var(--glass-border-color);
+    box-shadow: var(--shadow-3);
+    transform: translateY(-12px);
+    opacity: 0;
+    pointer-events: none;
+    transition: all var(--dur-2) var(--ease);
+  }
+  .mobile-nav.is-open {
+    transform: translateY(0);
+    opacity: 1;
+    pointer-events: auto;
+  }
+  .mobile-nav__link {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 13px 10px;
+    border-radius: 10px;
+    font-size: var(--fs-base);
+    color: var(--text-2);
+    border-bottom: 1px solid var(--line);
+  }
+  .mobile-nav__link:last-child {
+    border-bottom: 0;
+  }
+  .mobile-nav__link.is-active {
+    color: var(--accent);
+  }
+  .mobile-nav__link svg {
+    width: 16px;
+    height: 16px;
+    opacity: 0.6;
+  }
+  .mobile-nav__foot {
+    display: flex;
+    gap: var(--space-3);
+    margin-top: var(--space-4);
+  }
+  .mobile-nav__foot .btn {
+    flex: 1;
+  }
+}
+
+/* 页脚 -------------------------------------------------------------------- */
+
+.site-main {
+  flex: 1;
+  width: 100%;
+}
+
+.site-footer {
+  margin-top: var(--space-12);
+  border-top: 1px solid var(--line);
+  background: color-mix(in srgb, var(--glass-bg) 52%, transparent);
+  -webkit-backdrop-filter: blur(18px) saturate(1.2);
+  backdrop-filter: blur(18px) saturate(1.2);
+}
+
+.footer-grid {
+  display: grid;
+  grid-template-columns: 1.6fr 1fr 1fr 1.2fr;
+  gap: var(--space-8);
+  padding: var(--space-10) 0 var(--space-8);
+}
+
+.footer-brand {
+  max-width: 340px;
+}
+
+.footer-brand .brand {
+  margin-bottom: var(--space-4);
+}
+
+.footer-desc {
+  color: var(--text-2);
+  font-size: var(--fs-sm);
+  line-height: 1.75;
+}
+
+.footer-contact {
+  margin-top: var(--space-4);
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  font-size: var(--fs-sm);
+  color: var(--text-2);
+}
+
+.footer-contact span {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.footer-contact svg {
+  width: 15px;
+  height: 15px;
+  color: var(--accent);
+  flex: none;
+}
+
+.footer-title {
+  font-size: var(--fs-xs);
+  font-weight: 600;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--text-3);
+  margin-bottom: var(--space-4);
+}
+
+.footer-links {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  font-size: var(--fs-sm);
+}
+
+.footer-links a {
+  color: var(--text-2);
+  transition: color var(--dur-1) var(--ease);
+  width: fit-content;
+}
+
+.footer-links a:hover {
+  color: var(--accent);
+}
+
+.footer-bottom {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--space-4);
+  flex-wrap: wrap;
+  padding: var(--space-5) 0;
+  border-top: 1px solid var(--line);
+  font-size: var(--fs-xs);
+  color: var(--text-3);
+}
+
+.footer-bottom__right {
+  display: flex;
+  align-items: center;
+  gap: var(--space-4);
+  flex-wrap: wrap;
+}
+
+.version-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  height: 24px;
+  padding: 0 9px;
+  border-radius: var(--radius-pill);
+  border: 1px solid var(--line);
+  background: var(--surface-soft);
+  font-family: var(--font-mono);
+  font-size: 10px;
+  letter-spacing: 0.04em;
+  color: var(--text-2);
+}
+
+.version-badge::before {
+  content: "";
+  width: 5px;
+  height: 5px;
+  border-radius: 50%;
+  background: var(--success);
+}
+
+/* 页面头部 ---------------------------------------------------------------- */
+
+.page-head {
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  gap: var(--space-5);
+  flex-wrap: wrap;
+  margin-bottom: var(--space-6);
+}
+
+.page-head__text {
+  min-width: 0;
+}
+
+.page-title {
+  font-size: var(--fs-2xl);
+  margin-top: var(--space-3);
+}
+
+.page-desc {
+  color: var(--text-2);
+  font-size: var(--fs-sm);
+  margin-top: var(--space-2);
+}
+
+.page-actions {
+  display: flex;
+  align-items: center;
+  gap: var(--space-2);
+  flex-wrap: wrap;
+}
+
+/* 用户中心 / 后台框架 ----------------------------------------------------- */
+
+.dash {
+  display: grid;
+  grid-template-columns: var(--sidebar-w) minmax(0, 1fr);
+  gap: var(--space-6);
+  width: 100%;
+  max-width: var(--container);
+  margin: 0 auto;
+  padding: var(--space-6) var(--space-6) var(--space-10);
+  align-items: start;
+}
+
+.dash--admin {
+  max-width: 1480px;
+}
+
+.dash-side {
+  position: sticky;
+  top: calc(var(--header-h) + var(--space-4));
+  padding: var(--space-4);
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-3);
+  min-width: 0;
+  max-height: calc(100vh - var(--header-h) - var(--space-8));
+  overflow-y: auto;
+}
+
+.dash-side__user {
+  display: flex;
+  align-items: center;
+  gap: var(--space-3);
+  padding: var(--space-2) var(--space-2) var(--space-4);
+  border-bottom: 1px solid var(--line);
+}
+
+.dash-side__user-info {
+  min-width: 0;
+}
+
+.dash-side__name {
+  font-size: var(--fs-sm);
+  font-weight: 650;
+  color: var(--text-1);
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.dash-side__meta {
+  font-size: var(--fs-2xs);
+  color: var(--text-3);
+  margin-top: 2px;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.dash-nav {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.dash-nav__group {
+  padding: var(--space-3) var(--space-2) 5px;
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--text-3);
+}
+
+.dash-nav__item {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  height: 38px;
+  padding: 0 11px;
+  border-radius: 10px;
+  font-size: var(--fs-sm);
+  font-weight: 500;
+  color: var(--text-2);
+  transition: all var(--dur-2) var(--ease);
+  white-space: nowrap;
+}
+
+.dash-nav__item svg {
+  width: 17px;
+  height: 17px;
+  flex: none;
+  opacity: 0.78;
+}
+
+.dash-nav__item:hover {
+  background: var(--surface-soft);
+  color: var(--text-1);
+}
+
+.dash-nav__item.is-active {
+  background: var(--accent-soft);
+  color: var(--accent);
+  font-weight: 600;
+  box-shadow: inset 2px 0 0 var(--accent);
+}
+
+.dash-nav__item.is-active svg {
+  opacity: 1;
+}
+
+.dash-nav__item .badge {
+  margin-left: auto;
+  height: 19px;
+  padding: 0 6px;
+  font-size: 10px;
+}
+
+.dash-side__foot {
+  margin-top: auto;
+  padding-top: var(--space-3);
+  border-top: 1px solid var(--line);
+}
+
+.dash-main {
+  min-width: 0;
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-5);
+}
+
+.dash-main > .page-enter {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-5);
+}
+
+.admin-brand-chip {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  height: 22px;
+  padding: 0 8px;
+  border-radius: 6px;
+  font-size: 9px;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  color: var(--accent);
+  background: var(--accent-soft);
+  border: 1px solid color-mix(in srgb, var(--accent) 26%, transparent);
+}
+
+/* 后台顶栏（页面内） */
+
+.admin-topbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--space-3);
+  padding: 10px var(--space-4);
+  border-radius: var(--radius-md);
+  background: var(--surface-soft);
+  border: 1px solid var(--line);
+  font-size: var(--fs-xs);
+  color: var(--text-3);
+}
+
+.admin-topbar__left {
+  display: flex;
+  align-items: center;
+  gap: var(--space-2);
+  flex-wrap: wrap;
+}
+
+.admin-topbar__right {
+  display: flex;
+  align-items: center;
+  gap: var(--space-3);
+}
+
+/* 移动端布局 */
+
+@media (max-width: 1024px) {
+  .dash {
+    grid-template-columns: minmax(0, 1fr);
+    padding: var(--space-4) var(--space-4) var(--space-8);
+    gap: var(--space-4);
+  }
+  .dash-side {
+    position: static;
+    max-height: none;
+    overflow: visible;
+    padding: var(--space-3);
+  }
+  .dash-side__user {
+    padding-bottom: var(--space-3);
+  }
+  .dash-nav {
+    flex-direction: row;
+    flex-wrap: nowrap;
+    overflow-x: auto;
+    gap: 6px;
+    padding-bottom: 4px;
+    scrollbar-width: none;
+    -ms-overflow-style: none;
+  }
+  .dash-nav::-webkit-scrollbar {
+    display: none;
+  }
+  .dash-nav__group,
+  .dash-side__foot {
+    display: none;
+  }
+  .dash-nav__item {
+    flex: none;
+    height: 34px;
+    padding: 0 12px;
+    border-radius: var(--radius-pill);
+    border: 1px solid var(--line);
+    font-size: var(--fs-xs);
+  }
+  .dash-nav__item.is-active {
+    box-shadow: none;
+    border-color: color-mix(in srgb, var(--accent) 36%, transparent);
+  }
+  .dash-nav__item svg {
+    display: none;
+  }
+}
+
+@media (max-width: 1080px) {
+  .header-actions .header-user__name,
+  .header-actions .header-user svg:last-child {
+    display: none;
+  }
+  .header-user {
+    padding: 0 6px;
+    height: 38px;
+  }
+}
+
+@media (max-width: 720px) {
+  .site-header__inner {
+    padding: 0 var(--space-4);
+    gap: var(--space-3);
+  }
+  .brand__sub {
+    display: none;
+  }
+  .brand__mark {
+    width: 32px;
+    height: 32px;
+  }
+  .brand__name {
+    font-size: var(--fs-sm);
+  }
+  .header-actions {
+    gap: 2px;
+  }
+  .header-divider {
+    display: none;
+  }
+  .header-actions .btn--outline {
+    display: none;
+  }
+  .admin-brand-chip {
+    display: none;
+  }
+  .header-actions .btn--primary {
+    padding: 0 12px;
+    height: 34px;
+    font-size: var(--fs-xs);
+  }
+  .icon-btn {
+    width: 34px;
+    height: 34px;
+  }
+  .footer-grid {
+    grid-template-columns: 1fr 1fr;
+    gap: var(--space-6);
+    padding: var(--space-8) 0 var(--space-6);
+  }
+  .footer-brand {
+    grid-column: 1 / -1;
+    max-width: none;
+  }
+  .site-footer {
+    margin-top: var(--space-9);
+  }
+  .footer-bottom {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+  .page-head {
+    align-items: flex-start;
+  }
+  .page-title {
+    font-size: var(--fs-xl);
+  }
+}

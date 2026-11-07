@@ -1,0 +1,186 @@
+{
+  "site": {
+    "name": "智简魔方",
+    "fullName": "智简魔方 · 云与数据中心服务",
+    "domain": "zjmf-demo.local",
+    "icp": "沪ICP备2026000001号",
+    "copyright": "© 2026 智简魔方科技有限公司",
+    "phone": "400-800-2026",
+    "email": "support@zjmf-demo.local",
+    "address": "上海市浦东新区张江科学城 · 智简数据中心",
+    "supportHours": "7 x 24 小时技术支持",
+    "currency": "CNY",
+    "defaultMode": "dark"
+  },
+  "theme": {
+    "preset": "deepsea",
+    "mode": "dark",
+    "background": {
+      "type": "gradient",
+      "color": "#04121d",
+      "from": "#04121d",
+      "to": "#0b3550",
+      "angle": 140,
+      "image": "",
+      "blur": 0,
+      "veil": 0.2,
+      "veilColor": "#03111a"
+    },
+    "glass": {
+      "alpha": 0.48,
+      "blur": 20,
+      "border": 0.3,
+      "glow": 0.4,
+      "radius": 20,
+      "shadow": 0.5,
+      "saturation": 1.5
+    },
+    "accent": {
+      "primary": "#3fd0c9",
+      "secondary": "#58a6ff"
+    }
+  },
+  "presets": {
+    "morning": {
+      "label": "晨雾",
+      "desc": "浅色背景上的低对比玻璃，适合日间办公",
+      "theme": {
+        "preset": "morning",
+        "mode": "light",
+        "background": {
+          "type": "gradient",
+          "color": "#eef4ff",
+          "from": "#eef4ff",
+          "to": "#dde6ff",
+          "angle": 150,
+          "image": "",
+          "blur": 0,
+          "veil": 0.16,
+          "veilColor": "#dbe6ff"
+        },
+        "glass": {
+          "alpha": 0.62,
+          "blur": 24,
+          "border": 0.55,
+          "glow": 0.18,
+          "radius": 20,
+          "shadow": 0.16,
+          "saturation": 1.4
+        },
+        "accent": {
+          "primary": "#4f7cff",
+          "secondary": "#a06bff"
+        }
+      }
+    },
+    "deepsea": {
+      "label": "深海",
+      "desc": "深蓝海面与青色高光，默认主题",
+      "theme": {
+        "preset": "deepsea",
+        "mode": "dark",
+        "background": {
+          "type": "gradient",
+          "color": "#04121d",
+          "from": "#04121d",
+          "to": "#0b3550",
+          "angle": 140,
+          "image": "",
+          "blur": 0,
+          "veil": 0.2,
+          "veilColor": "#03111a"
+        },
+        "glass": {
+          "alpha": 0.48,
+          "blur": 20,
+          "border": 0.3,
+          "glow": 0.4,
+          "radius": 20,
+          "shadow": 0.5,
+          "saturation": 1.5
+        },
+        "accent": {
+          "primary": "#3fd0c9",
+          "secondary": "#58a6ff"
+        }
+      }
+    },
+    "polar": {
+      "label": "极夜",
+      "desc": "近黑底色与紫粉辉光，夜间低光环境",
+      "theme": {
+        "preset": "polar",
+        "mode": "dark",
+        "background": {
+          "type": "gradient",
+          "color": "#05060c",
+          "from": "#05060c",
+          "to": "#171024",
+          "angle": 160,
+          "image": "",
+          "blur": 0,
+          "veil": 0.24,
+          "veilColor": "#04040a"
+        },
+        "glass": {
+          "alpha": 0.46,
+          "blur": 18,
+          "border": 0.26,
+          "glow": 0.5,
+          "radius": 18,
+          "shadow": 0.6,
+          "saturation": 1.35
+        },
+        "accent": {
+          "primary": "#a78bfa",
+          "secondary": "#f472b6"
+        }
+      }
+    },
+    "aurora": {
+      "label": "极光",
+      "desc": "墨绿极夜中透出极光青绿，冷色调",
+      "theme": {
+        "preset": "aurora",
+        "mode": "dark",
+        "background": {
+          "type": "gradient",
+          "color": "#06131a",
+          "from": "#06131a",
+          "to": "#0a2a2a",
+          "angle": 135,
+          "image": "",
+          "blur": 0,
+          "veil": 0.18,
+          "veilColor": "#041013"
+        },
+        "glass": {
+          "alpha": 0.5,
+          "blur": 22,
+          "border": 0.32,
+          "glow": 0.45,
+          "radius": 22,
+          "shadow": 0.45,
+          "saturation": 1.6
+        },
+        "accent": {
+          "primary": "#7cf0d0",
+          "secondary": "#8fb8ff"
+        }
+      }
+    }
+  },
+  "commerce": {
+    "terms": [
+      {"months": 1, "label": "1 个月", "factor": 1},
+      {"months": 3, "label": "3 个月", "factor": 2.88},
+      {"months": 6, "label": "6 个月", "factor": 5.4},
+      {"months": 12, "label": "12 个月", "factor": 9.6}
+    ],
+    "paymentMethods": [
+      {"id": "balance", "name": "账户余额", "desc": "实时到账，余额不足时不可用"},
+      {"id": "alipay", "name": "支付宝", "desc": "演示环境为模拟支付"},
+      {"id": "wechat", "name": "微信支付", "desc": "演示环境为模拟支付"}
+    ]
+  }
+}

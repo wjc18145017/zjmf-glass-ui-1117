@@ -1,0 +1,42 @@
+[
+  {
+    "id": 1,
+    "userId": 2,
+    "name": "CI 部署密钥",
+    "key": "zjmf_live_7f3a91c2d84b6e0a5f17c9d3b2a8e641",
+    "scopes": ["servers:read", "servers:power", "orders:read"],
+    "status": "active",
+    "createdAt": "2026-09-18 10:22:00",
+    "lastUsed": "2026-11-06 22:41:00"
+  },
+  {
+    "id": 2,
+    "userId": 2,
+    "name": "监控只读密钥",
+    "key": "zjmf_live_a9c4e2f7810d5b3c6e4f8a2d1c7b9e35",
+    "scopes": ["servers:read"],
+    "status": "active",
+    "createdAt": "2026-10-02 14:08:00",
+    "lastUsed": "2026-11-07 08:00:00"
+  },
+  {
+    "id": 3,
+    "userId": 1,
+    "name": "运维自动化",
+    "key": "zjmf_live_19b7d3f2a6c8e5d0b4a1f7c3e9d2b6a8",
+    "scopes": ["servers:read", "servers:power", "users:read", "orders:read"],
+    "status": "active",
+    "createdAt": "2026-06-11 09:30:00",
+    "lastUsed": "2026-11-07 07:20:00"
+  },
+  {
+    "id": 4,
+    "userId": 2,
+    "name": "旧版脚本（已停用）",
+    "key": "zjmf_live_33f1a8c6e2b9d7405f3a1c8e6b2d9f47",
+    "scopes": ["servers:read"],
+    "status": "disabled",
+    "createdAt": "2026-08-01 16:00:00",
+    "lastUsed": "2026-09-01 12:12:00"
+  }
+]

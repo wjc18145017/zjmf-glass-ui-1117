@@ -1,0 +1,38 @@
+[
+  {
+    "id": 1,
+    "userId": 2,
+    "userName": "林小舟",
+    "amount": 1200.00,
+    "method": "alipay",
+    "status": "pending",
+    "note": "用户申请充值 1200 元",
+    "createdAt": "2026-11-05 21:18:00",
+    "reviewedAt": "",
+    "reviewNote": ""
+  },
+  {
+    "id": 2,
+    "userId": 2,
+    "userName": "林小舟",
+    "amount": 5000.00,
+    "method": "alipay",
+    "status": "approved",
+    "note": "用户申请充值 5000 元",
+    "createdAt": "2026-09-01 09:16:00",
+    "reviewedAt": "2026-09-01 09:30:00",
+    "reviewNote": "流水号核对无误"
+  },
+  {
+    "id": 3,
+    "userId": 3,
+    "userName": "王云",
+    "amount": 300.00,
+    "method": "wechat",
+    "status": "rejected",
+    "note": "用户申请充值 300 元",
+    "createdAt": "2026-10-28 10:40:00",
+    "reviewedAt": "2026-10-28 11:12:00",
+    "reviewNote": "未查询到对应支付流水，已驳回"
+  }
+]

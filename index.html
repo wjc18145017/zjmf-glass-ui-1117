@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="zh-CN" data-mode="dark">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <meta name="description" content="智简魔方 ZJMF · 云服务器与数据中心服务玻璃拟态主题工程">
+  <meta name="theme-color" content="#04121d">
+  <title>智简魔方 · 云与数据中心服务</title>
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg">
+  <link rel="stylesheet" href="/assets/css/tokens.css?v=1.4.0">
+  <link rel="stylesheet" href="/assets/css/base.css?v=1.4.0">
+  <link rel="stylesheet" href="/assets/css/components.css?v=1.4.0">
+  <link rel="stylesheet" href="/assets/css/layout.css?v=1.4.0">
+  <link rel="stylesheet" href="/assets/css/pages.css?v=1.4.0">
+  <link rel="stylesheet" href="/assets/css/admin.css?v=1.4.0">
+  <script>
+    /* 首屏主题引导：在样式生效前应用缓存的模式，避免闪烁 */
+    (function () {
+      try {
+        var cfg = JSON.parse(localStorage.getItem('zjmf:themeCache') || 'null');
+        var override = localStorage.getItem('zjmf:mode') || '';
+        var adminMode = (cfg && cfg.mode) || 'dark';
+        var mode = override || adminMode;
+        if (mode === 'system') {
+          mode = window.matchMedia('(prefers-color-scheme: light)').matches ? 'light' : 'dark';
+        }
+        document.documentElement.setAttribute('data-mode', mode === 'light' ? 'light' : 'dark');
+      } catch (e) { /* noop */ }
+    })();
+  </script>
+</head>
+<body>
+  <div class="app-bg" id="app-bg" aria-hidden="true">
+    <div class="app-bg__image" id="app-bg-image"></div>
+    <div class="app-bg__veil" id="app-bg-veil"></div>
+    <div class="app-bg__orb app-bg__orb--a"></div>
+    <div class="app-bg__orb app-bg__orb--b"></div>
+    <div class="app-bg__orb app-bg__orb--c"></div>
+    <div class="app-bg__grain"></div>
+  </div>
+
+  <div id="app" class="app"></div>
+  <div id="modal-root"></div>
+  <div id="toast-root" class="toast-root" aria-live="polite"></div>
+
+  <script src="/assets/js/icons.js?v=1.4.0"></script>
+  <script src="/assets/js/api.js?v=1.4.0"></script>
+  <script src="/assets/js/store.js?v=1.4.0"></script>
+  <script src="/assets/js/ui.js?v=1.4.0"></script>
+  <script src="/assets/js/theme.js?v=1.4.0"></script>
+  <script src="/assets/js/app.js?v=1.4.0"></script>
+  <script src="/assets/js/pages/front.js?v=1.4.0"></script>
+  <script src="/assets/js/pages/user.js?v=1.4.0"></script>
+  <script src="/assets/js/pages/admin.js?v=1.4.0"></script>
+  <script>App.boot();</script>
+</body>
+</html>

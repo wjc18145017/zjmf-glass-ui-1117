@@ -1,0 +1,102 @@
+[
+  {
+    "id": 1,
+    "userId": 2,
+    "userName": "林小舟",
+    "action": "auth.login",
+    "detail": "用户登录成功（Windows / Chrome）",
+    "ip": "203.0.113.88",
+    "level": "info",
+    "at": "2026-11-07 08:12:00"
+  },
+  {
+    "id": 2,
+    "userId": 2,
+    "userName": "林小舟",
+    "action": "cart.add",
+    "detail": "加入购物车：智简云 ECS / 标准型",
+    "ip": "203.0.113.88",
+    "level": "info",
+    "at": "2026-11-06 21:40:00"
+  },
+  {
+    "id": 3,
+    "userId": 2,
+    "userName": "林小舟",
+    "action": "recharge.apply",
+    "detail": "提交充值申请 1200 元（支付宝）",
+    "ip": "203.0.113.88",
+    "level": "info",
+    "at": "2026-11-05 21:18:00"
+  },
+  {
+    "id": 4,
+    "userId": 2,
+    "userName": "林小舟",
+    "action": "ticket.create",
+    "detail": "创建工单：香港 VPS 无法通过 SSH 连接",
+    "ip": "203.0.113.88",
+    "level": "info",
+    "at": "2026-11-05 09:24:00"
+  },
+  {
+    "id": 5,
+    "userId": 1,
+    "userName": "系统管理员",
+    "action": "ticket.reply",
+    "detail": "回复工单 #1（技术支持 周工）",
+    "ip": "10.0.0.8",
+    "level": "info",
+    "at": "2026-11-05 10:03:00"
+  },
+  {
+    "id": 6,
+    "userId": 1,
+    "userName": "系统管理员",
+    "action": "theme.update",
+    "detail": "保存主题配置：深海（深色模式）",
+    "ip": "10.0.0.8",
+    "level": "warning",
+    "at": "2026-10-30 16:20:00"
+  },
+  {
+    "id": 7,
+    "userId": 3,
+    "userName": "王云",
+    "action": "realname.submit",
+    "detail": "提交个人实名认证资料",
+    "ip": "198.51.100.23",
+    "level": "info",
+    "at": "2026-10-27 11:05:00"
+  },
+  {
+    "id": 8,
+    "userId": 1,
+    "userName": "系统管理员",
+    "action": "user.disable",
+    "detail": "禁用用户 chenmo（风险控制）",
+    "ip": "10.0.0.8",
+    "level": "warning",
+    "at": "2026-10-21 09:40:00"
+  },
+  {
+    "id": 9,
+    "userId": 2,
+    "userName": "林小舟",
+    "action": "order.pay",
+    "detail": "支付订单 ZJ202610290001，金额 138.00 元（余额）",
+    "ip": "203.0.113.88",
+    "level": "info",
+    "at": "2026-10-29 09:12:40"
+  },
+  {
+    "id": 10,
+    "userId": 1,
+    "userName": "系统管理员",
+    "action": "product.update",
+    "detail": "更新产品「智简云 ECS」套餐库存",
+    "ip": "10.0.0.8",
+    "level": "info",
+    "at": "2026-10-18 11:12:00"
+  }
+]
