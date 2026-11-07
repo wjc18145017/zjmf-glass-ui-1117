@@ -1,6 +1,7 @@
 # 运行时数据（首次访问时由 api/seed 自动生成）
 /data/*.json
 /data/*.lock
+!/data/.gitkeep
 
 # 上传文件
 /uploads/*
