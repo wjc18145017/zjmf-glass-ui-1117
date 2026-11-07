@@ -162,9 +162,27 @@
 
 ---
 
+## 步骤 19 · README 与开发文档
+
+- 时间：19:05 - 19:15
+- 路径/文件：`README.md`、`docs/development.md`、`CHANGELOG.md`、`log.md`
+- 修改：README（快速开始、演示账号、37 条页面路由表、主题能力与生效逻辑、目录结构、文档索引、已知边界）；开发文档（架构与请求链路、后端/前端分层、数据模型、扩展指引、主题引擎数据流与关键函数、测试方法、常见问题排查、Nginx 部署、版本流程）；CHANGELOG 补 v1.5.0 与 v1.4.0；本日志。
+- 命令：`git add README.md CHANGELOG.md log.md docs/development.md` → `git commit -m "docs: 新增 README、开发文档、CHANGELOG 与开发日志 v1.4.0"`
+- 目的：交付可维护的开发文档与版本记录。
+- 结果：提交 `460ff33`，4 个文件、748 行新增。
+
+## 步骤 20 · 版本升至 1.5.0
+
+- 时间：19:15 - 19:20
+- 路径/文件：`version.json`、`index.html`、`README.md`、`docs/api.md`、`docs/design-system.md`、`docs/development.md`、`CHANGELOG.md`
+- 修改：`version.json` → `1.5.0`（更新时间 2026-11-07 19:20:00）；`index.html` 全部静态资源 `?v=1.4.0` → `?v=1.5.0`；四份文档版本号同步；CHANGELOG 增加 v1.5.0 条目。
+- 命令：`git add -A` → `git commit -m "chore: 版本升至 1.5.0（文档交付）"`
+- 目的：文档交付属于一次功能更新，按规则升版并保持页面版本号一致。
+- 结果：见提交记录；页脚/后台顶栏读取 `/api/config` 即显示 v1.5.0。
+
+---
+
 ## 待续
 
-- 步骤 19：README 与开发文档（本批）
-- 步骤 20：版本升至 1.5.0，同步 `index.html` 的 `?v=`
 - 步骤 21：重置演示数据与主题回默认，PHP 本地服务复测（health、关键接口、页面截图）
 - 步骤 22：GitHub 仓库 `zjmf-glass-ui-1117` 创建与推送（若无 `gh`/凭证则记录阻塞）

@@ -1,6 +1,6 @@
 # 智简魔方 Glass UI · 接口文档
 
-版本：1.4.0
+版本：1.5.0
 服务入口：`http(s)://<host>/api`
 数据格式：`application/json; charset=utf-8`（请求与响应均为 JSON，`Cache-Control: no-store`）
 
