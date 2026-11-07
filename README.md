@@ -7,6 +7,7 @@
 - 技术栈：PHP 7.4（内置服务器即可）+ 原生 JavaScript（Hash 路由 SPA）+ 原生 CSS（设计令牌驱动）
 - 数据存储：JSON 文件（`data/*.json`），首次访问自动从 `api/seed` 播种
 - 主题：管理员后台可视化配置（背景 / 玻璃 / 深浅色 / 强调色），保存后前台实时生效并持久化
+- 云端仓库：<https://github.com/wjc18145017/zjmf-glass-ui-1117>（分支 `master`）
 
 ---
 

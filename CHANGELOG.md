@@ -19,6 +19,11 @@
 - PHP 7.4 本地服务实测：health/config/products/产品 slug/公告/帮助/登录/加购/下单支付/订单详情/servers/bills/后台 stats/tickets/users/products/announcements/logs/主题保存与校验/主题恢复/首页 200 与 `?v=1.5.1` 全部通过。
 - 测试后清空 `data/*.json`，恢复出厂种子数据。
 
+### 工程
+
+- 新增 GitHub 云端备份：仓库 <https://github.com/wjc18145017/zjmf-glass-ui-1117>（public，默认分支 `master`），5 次提交全部推送；远端 SHA 与本地 `HEAD` 校验一致。
+- 远端使用 SSH（`git@github.com:wjc18145017/zjmf-glass-ui-1117.git`），token 不入库、不写入配置与日志。
+
 ---
 
 ## v1.5.0 — 2026-11-07
