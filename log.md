@@ -182,7 +182,54 @@
 
 ---
 
-## 待续
+## 步骤 21 · PHP 本地服务实测与数据复位
 
-- 步骤 21：重置演示数据与主题回默认，PHP 本地服务复测（health、关键接口、页面截图）
-- 步骤 22：GitHub 仓库 `zjmf-glass-ui-1117` 创建与推送（若无 `gh`/凭证则记录阻塞）
+- 时间：19:20 - 19:45
+- 路径/文件：`data/*.json`（清空）、`docs/api.md`（校正）、`version.json`、`index.html`、`README.md`、`docs/*.md`、`CHANGELOG.md`
+- 修改：先删除全部运行时 JSON 与锁文件（仅留 `.gitkeep`），由 `api/seed` 重新播种；用 PowerShell 脚本（`%TEMP%\zjmf-smoke.ps1`，工程外临时文件）对本地服务逐项实测；据实测结果校正文档中的返回结构（`presets` 对象、`/admin/stats` 字段、`/bills`、`/admin/products`、`/admin/announcements`、充值限额、工单校验、预设 id）；版本升至 1.5.1 并同步 `?v=`。
+- 命令：
+
+```powershell
+Remove-Item data\*.json, data\*.lock -Force
+& "$env:TEMP\zjmf-smoke.ps1"
+```
+
+- 目的：在真实 PHP 7.4 内置服务器下验证接口与交互链路，并让文档与实际返回一致。
+- 结果（实测输出摘要）：
+
+| 用例 | 结果 |
+| --- | --- |
+| `GET /api/health` | `code=0 status=ok version=1.5.0`（升版后为 1.5.1） |
+| `GET /api/config` | 站点「智简魔方」、预设 `deepsea`、`dark`、`alpha=0.48`、预设键 `morning,deepsea,polar,aurora` |
+| `GET /api/products` | `total=7`，首条「智简云 ECS」`minPrice=49`，7 个分类 |
+| `GET /api/products/cloud-ecs` | 名称正确、4 个套餐、3 条相关推荐、`rating=4.9` |
+| `GET /api/announcements` | `total=5`，首条置顶 |
+| `GET /api/help` | 6 个分类、首分类 3 篇 |
+| 登录 demo | `code=0`，`role=user`，余额 `4663` |
+| 加购 | `code=0 count=1 total=49` |
+| 下单并余额支付 | `code=0`，订单号 `ZJ202611070008`，`status=paid`，`amount=49` |
+| 订单详情（按订单号） | `statusText=已支付`、`servers=1`、`items=1` |
+| `/auth/me` | `unread=5`、`cartCount=0`、`isAdmin=False` |
+| `/servers`、`/bills` | 5 台服务器；余额 `4614`、流水与充值单返回正常 |
+| 后台 `/admin/stats` | `userTotal=4 orderTotal=8 orderPaid=6 revenue=1783 serverTotal=7 ticketOpen=3 chart=7` |
+| 后台工单/用户/产品/公告/日志 | 工单 4、用户 4、日志 18 条，均正常返回 |
+| 主题保存 | `code=0`，`preset=custom alpha=0.82 accent=#7cf0d0` |
+| 主题校验（`/api/config`） | 与保存值一致，持久化生效 |
+| 主题恢复 | 回到 `deepsea alpha=0.48 mode=dark` |
+| 首页 | HTTP 200，静态资源 `?v=1.5.1` |
+
+- 收尾：再次清空 `data/*.json` 与锁文件，恢复出厂种子；随后 `/api/health` 返回 `ok`。测试过程未改动前端代码，仅校正文档与版本号。
+
+## 步骤 22 · GitHub 云端备份（受阻）
+
+- 时间：19:45 - 19:50
+- 路径/文件：无（环境检查）
+- 修改：无
+- 命令：`Get-Command gh`、`gh auth status`、检查 `GITHUB_TOKEN`、`git remote -v`、`git branch --show-current`
+- 目的：创建带 `1117` 后缀的仓库并推送备份。
+- 结果：**环境阻塞**。`gh` 未安装、`GITHUB_TOKEN` 不存在、仓库无 remote、当前分支 `master`。
+  - 已完成的本地备份：4 次提交（`d322f8d`、`e67ae8f`、`460ff33`、`b87e7d0`），见 `git log`。
+  - 需用户操作（任选其一）：
+    1. 安装 GitHub CLI 并登录：`winget install GitHub.cli` → `gh auth login` → `gh repo create zjmf-glass-ui-1117 --public --source . --remote origin --push`；
+    2. 或提供 Personal Access Token 后由代理执行推送；
+    3. 或手动在 GitHub 建空仓库 `zjmf-glass-ui-1117`，再执行 `git remote add origin <仓库地址>` 与 `git push -u origin master`。

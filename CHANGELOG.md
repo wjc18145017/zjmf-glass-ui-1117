@@ -4,6 +4,23 @@
 
 ---
 
+## v1.5.1 — 2026-11-07
+
+### 修复（文档与接口实测对齐）
+
+- `docs/api.md` 校正 `GET /config` 的 `presets` 结构（以 `morning/deepsea/polar/aurora` 为键的对象，含 `label/desc/theme`）。
+- 校正 `GET /admin/stats` 实际字段（`userTotal/userActive/orderTotal/orderPaid/revenue/serverTotal/serverRunning/ticketOpen/pendingRecharges/revenueChart/recentOrders/serverStatus`）。
+- 校正 `GET /bills`（`items/recharges/balance/totalRecharge/totalConsume`）、`GET /admin/products` 与 `GET /admin/announcements`（仅 `items`）。
+- 校正充值限额为 1-50000 元、工单标题 4-60 字与描述 10-2000 字校验。
+- 设计规范中预设 id 由 `mist` 更正为 `morning`。
+
+### 测试
+
+- PHP 7.4 本地服务实测：health/config/products/产品 slug/公告/帮助/登录/加购/下单支付/订单详情/servers/bills/后台 stats/tickets/users/products/announcements/logs/主题保存与校验/主题恢复/首页 200 与 `?v=1.5.1` 全部通过。
+- 测试后清空 `data/*.json`，恢复出厂种子数据。
+
+---
+
 ## v1.5.0 — 2026-11-07
 
 ### 文档

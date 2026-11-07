@@ -1,6 +1,6 @@
 # 智简魔方 Glass UI · 接口文档
 
-版本：1.5.0
+版本：1.5.1
 服务入口：`http(s)://<host>/api`
 数据格式：`application/json; charset=utf-8`（请求与响应均为 JSON，`Cache-Control: no-store`）
 
@@ -93,14 +93,19 @@ Authorization: Bearer <token>
 {
   "site": { "name": "智简魔方", "slogan": "...", "phone": "...", "email": "...", "icp": "..." },
   "theme": { "preset": "deepsea", "mode": "dark", "background": {}, "glass": {}, "accent": {} },
-  "presets": [ { "id": "mist", "name": "晨雾", "theme": {} } ],
+  "presets": {
+    "morning": { "label": "晨雾", "desc": "浅色背景上的低对比玻璃，适合日间办公", "theme": {} },
+    "deepsea": { "label": "深海", "desc": "深蓝海面与青色高光，默认主题", "theme": {} },
+    "polar": { "label": "极夜", "desc": "近黑底色与紫粉辉光，夜间低光环境", "theme": {} },
+    "aurora": { "label": "极光", "desc": "墨绿极夜中透出极光青绿，冷色调", "theme": {} }
+  },
   "commerce": { "terms": [ { "months": 1, "factor": 1, "label": "1 个月" } ], "currency": "CNY" },
-  "version": "1.4.0",
+  "version": "1.5.0",
   "demo": true
 }
 ```
 
-- 说明：`theme` 已经过 `theme_normalize()` 归一化（字段见附录 A）；`presets` 供前台/后台主题选择器使用。
+- 说明：`theme` 已经过 `theme_normalize()` 归一化（字段见附录 A）；`presets` 是以预设 id 为键的对象（`morning/deepsea/polar/aurora`），每项含 `label`、`desc`、`theme`，供前台/后台主题选择器遍历使用。
 
 ### 2.4 `GET /api/products`
 
@@ -349,18 +354,18 @@ Authorization: Bearer <token>
 
 ### 5.5 `GET /api/bills`（登录）
 
-- 返回：`{ items: [], total, balance }`；条目字段 `id, no, type(consume/recharge), amount, status, method, createdAt, remark`
+- 返回：`{ items: [], recharges: [], balance, totalRecharge, totalConsume }`；`items` 为消费/充值流水（`id, no, type(consume/recharge), amount, status, method, createdAt, remark`），`recharges` 为充值单，`balance` 为当前余额。
 
 ### 5.6 `POST /api/recharge`（登录）
 
 | 参数 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
-| amount | number | 是 | 充值金额，1-20000 |
+| amount | number | 是 | 充值金额，1-50000 |
 | method | string | 否 | `alipay` / `wechat` / `bank` |
 
 - 行为：生成充值单（状态 `reviewing`），进入后台「财务审核」
 - 返回：`{ id, no, amount, status, statusText }`
-- 错误：`400 充值金额需在 1-20000 元之间`
+- 错误：`400 充值金额需在 1-50000 元之间`
 
 ### 5.7 `GET /api/tickets`（登录）
 
@@ -370,13 +375,13 @@ Authorization: Bearer <token>
 
 | 参数 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
-| title | string | 是 | 标题，≤60 字 |
+| title | string | 是 | 标题，4-60 字 |
 | category | string | 否 | 分类，默认「其他问题」 |
-| priority | string | 否 | `low` / `normal` / `high`，默认 normal |
-| content | string | 是 | 首条内容 |
+| priority | string | 否 | `low` / `normal` / `high` / `urgent`，默认 normal |
+| content | string | 是 | 首条内容，10-2000 字 |
 
 - 返回：新建工单对象（HTTP 201）
-- 错误：`400 请填写工单标题与内容`
+- 错误：`400 工单标题需为 4-60 个字符` / `400 问题描述需为 10-2000 个字符`
 
 ### 5.9 `GET /api/tickets/{id}`（登录）
 
@@ -509,15 +514,17 @@ Authorization: Bearer <token>
 
 ```json
 {
-  "users": 4, "usersToday": 1,
-  "orders": 9, "ordersToday": 2, "pendingOrders": 1,
-  "revenue": 1288.00, "revenueToday": 99.00,
-  "servers": 7, "tickets": 5, "openTickets": 3,
-  "recharges": 2, "pendingRecharges": 1, "products": 8,
-  "trend": { "labels": ["11-01", "..."], "revenue": [], "orders": [] },
-  "recentOrders": [], "recentTickets": []
+  "userTotal": 4, "userActive": 4,
+  "orderTotal": 8, "orderPaid": 6, "revenue": 1734.00,
+  "serverTotal": 7, "serverRunning": 5,
+  "ticketOpen": 3, "pendingRecharges": 1,
+  "revenueChart": [ { "date": "2026-11-01", "revenue": 0 } ],
+  "recentOrders": [],
+  "serverStatus": { "running": 5, "stopped": 2, "expired": 1 }
 }
 ```
+
+- 说明：`revenueChart` 固定返回最近 7 天（含当天）的已支付金额；`recentOrders` 为最近 6 条订单；`serverStatus` 用于服务器状态分布图。
 
 ### 6.2 `GET /api/admin/users`
 
@@ -556,7 +563,7 @@ Authorization: Bearer <token>
 
 ### 6.6 `GET /api/admin/products`
 
-- 返回：`{ items, total, categories }`，含下架产品与库存
+- 返回：`{ items }`，全量产品（含下架产品、套餐与库存、分类字段）
 
 ### 6.7 `POST /api/admin/products`
 
@@ -645,7 +652,7 @@ Authorization: Bearer <token>
 
 ### 6.18 `GET /api/admin/announcements`
 
-- 返回：`{ items, total }`（含正文）
+- 返回：`{ items }`，按 `createdAt` 倒序，含正文
 
 ### 6.19 `POST /api/admin/announcements`
 
